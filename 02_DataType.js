@@ -5,6 +5,9 @@ let age = 23       //int or number
 let isLoggedIn =  false //boolean
 let city;           //null
 
+console.log(typeof undefined); //undefine
+console.log(typeof null);      //object
+
 //number
 //bigInt
 //string
