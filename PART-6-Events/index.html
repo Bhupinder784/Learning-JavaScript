@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>IMAGES</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" src="../Media/bike.jpeg" alt="bike" id="bike">
+            </li>
+            <li>
+                <img width="200px" src="../Media/flower.webp" alt="flower" id="flower">
+            </li>
+            <li>
+                <img width="200px" src="../Media/nature.jpeg" alt="nature" id="nature">
+            </li>
+            <li>
+                <img width="200px" src="../Media/paint.jpeg" alt="paint" id="paint">
+            </li>
+            <li>
+                <img width="200px" src="../Media/Sea.jpeg" alt="sea" id="sea">
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('bike').onclick = function(){
+    //     alert("you click on bike")
+    // }
+
+    // document.getElementById('nature').addEventListener('click', function(){
+    //     alert("you click on nature pic");
+    // }, false);
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, sourceElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrKey, shiftKey, keyCode
+
+    //Bubbling and capturing*****************************
+    /*
+    document.getElementById('images').addEventListener('click',  function(e){
+        console.log("clcik inside the ul")
+    }, false);
+
+    document.getElementById('bike').addEventListener('click', (e) => {
+        console.log("Bike clicked..");
+        e.stopPropagation();
+    }, false);
+
+    document.getElementById('nature').addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("nature pic clicked..")
+    })
+    */
+
+   document.querySelector("#images").addEventListener('click', (e) => {
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeItem = e.target.parentNode;
+            removeItem.remove();
+        }
+
+        // console.log(e.target.parentNode);
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+        //removeIt.parentNode.removeChild(removeIt);
+   })
+</script>
+</html>
